@@ -1,5 +1,5 @@
 export default {
-  darkMode: 'class', // important for toggling via class
+  darkMode: 'class', 
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
