@@ -17,7 +17,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ data }) => {
   return (
 
-    <div  className= "max-w-sm bg-white border-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 border ">
+    <div  className= "max-w-sm bg-white dark:bg-slate-800 dark:border-slate-700 border-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 border ">
       <div className="p-5 space-y-3">
         <div className="flex justify-between items-center">
           <span className="text-sm text-white bg-slate-600 px-3 py-1 rounded-full font-medium">
@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
           {data.tags.map((tag, index) => (
             <span
               key={index}
-              className=" text-slate-600 bg-gray-100  text-xs px-2 py-1 rounded-full cursor-pointer"
+              className=" text-slate-600 dark:text-gray-100  dark:bg-slate-600 bg-gray-100  text-xs px-2 py-1 rounded-full cursor-pointer"
             >
               #{tag}
             </span>

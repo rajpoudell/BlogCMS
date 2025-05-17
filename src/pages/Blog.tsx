@@ -33,7 +33,7 @@ const Blog = () => {
         )}
       </div>
 
-      <div className="rounded-lg border bg-white p-6 shadow-sm">
+      <div className="rounded-lg border dark:border-slate-800 bg-white dark:bg-slate-800  p-6 shadow-sm">
         <p>Welcome to your Blogs !</p>
       </div>
 

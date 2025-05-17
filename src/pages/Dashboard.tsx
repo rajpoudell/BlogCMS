@@ -5,13 +5,13 @@ const Dashboard = () => {
     const { length } = useBlogStore();
 
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>Dashboard - BlogCMS</title>
         <meta name="description" content="This is the dashboard of My BlogCMS. Discover amazing features and Blogs." />
       </Helmet>
-      <h1 className="mb-6 text-2xl font-bold">Dashboard</h1>
-      <div className="rounded-lg border bg-white p-6 shadow-sm">
+      <h1 className="mb-6 text-2xl font-bold  ">Dashboard</h1>
+      <div className=" rounded-lg border  p-6 shadow-sm">
         <p>Welcome to your dashboard!</p>
                 {length}
 

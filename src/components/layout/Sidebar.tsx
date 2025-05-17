@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
 
   return (
     <aside
-      className={`fixed top-0 z-20 h-screen w-64 bg-white shadow-lg transition-all duration-300 lg:left-0 
+      className={` dark:text-white dark:bg-slate-700  text-slate-900 bg-white fixed top-0 z-20 h-screen w-64  shadow-lg transition-all duration-300 lg:left-0 
       ${isOpen ? "left-0" : "-left-64"}`}
     >
       <div className="flex h-full flex-col shadow-2xl">
@@ -61,7 +61,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
                     ${
                       isActive
                         ? "bg-blue-50 text-slate-900"
-                        : "text-slate-800 hover:bg-gray-100"
+                        : "dark:bg-slate-800 dark:text-gray-400 text-slate-900 dark:hover:bg-slate-900 "
                     }`
                   }
                 >

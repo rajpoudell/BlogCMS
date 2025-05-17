@@ -12,12 +12,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white">
       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       <Header toggleSidebar={toggleSidebar} />
       
-      <main className="pt-16 lg:pl-64">
-        <div className="p-6">
+      <main className="pt-16 lg:pl-64 dark:text-white dark:bg-slate-700 text-slate-900 bg-white">
+        <div className="p-6 ">
           {children}
         </div>
       </main>
