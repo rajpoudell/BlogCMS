@@ -2,6 +2,7 @@ import useAuthStore from "../../stores/authStore";
 import { CgProfile } from "react-icons/cg";
 import { FaBars } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import Button from "../common/Button";
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -21,25 +22,25 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
       <div className="flex  items-center  space-x-4 gap-3">
         {isLoggedIn ? (
           <>
-            <h2>hi</h2>
-            {localStorage.getItem("name")?.trim()}
-            <Link to={"/profile"}>
+            <h2 className="cursor-default">
+              <span className="font-bold gap-1">Hi !</span>
+              <span className=" px-2.5">
+                {localStorage.getItem("name")?.split(" ")[0]}
+              </span>
+            </h2>
+
+            <Link to={"/"}>
               <CgProfile className="h-8 w-8" />
             </Link>
-            <Link to={"/logout"}>
-              <button
-                onClick={logout}
-                className=" w-full py-2 px-4 rounded hover:bg-slate-700 transition btn bg-slate-900   text-white cursor-pointer"
-              >
-                Logout
-              </button>
+            <Link to={"/login"}>
+           
+              <Button clickout={()=>logout()} name="Logout" />
             </Link>
           </>
         ) : (
           <Link to="/login">
-            <button className=" w-full py-2 px-4 rounded hover:bg-slate-700 transition btn bg-slate-900   text-white cursor-pointer">
-              Login
-            </button>
+            <Button  name="Login" />
+            
           </Link>
         )}
       </div>

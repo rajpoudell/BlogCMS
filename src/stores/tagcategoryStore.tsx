@@ -44,7 +44,6 @@ const useTagStore = create<TagState>((set) => ({
         id: String(index + 1),
         title: tag,
       }));
-      console.log("tagstore", tagObjects);
       set({ tags: tagObjects, loading: false });
             localStorage.setItem("tags", JSON.stringify(tagObjects));
 

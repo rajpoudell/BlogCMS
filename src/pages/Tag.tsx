@@ -1,15 +1,11 @@
-import { useEffect } from "react";
 import Error from "../components/common/Error";
 import Loading from "../components/common/Loading";
-import useTagStore from "../stores/tagcategoryStore";
+import useBlogStore from "../stores/blogStore";
 
 const Tag = () => {
-  const { tags, fetchTags, categories, fetchCategory, loading, error } =
-    useTagStore();
-  useEffect(() => {
-    fetchTags();
-    fetchCategory();
-  }, []);
+  const { tags,  categories, loading, error } =
+    useBlogStore();
+
   return (
     <div>
       <h1 className="mb-6 text-2xl font-bold">Tag</h1>

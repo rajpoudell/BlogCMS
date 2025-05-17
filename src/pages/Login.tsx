@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
+import useBlogStore from "../stores/blogStore";
 
 interface LoginFormInputs {
   email: string;
@@ -20,6 +21,8 @@ const schema = Yup.object().shape({
 });
 
 const Login: React.FC = () => {
+  const fetchBlogs = useBlogStore((state) => state.fetchBlogs);
+
   const navigate = useNavigate();
   const { login } = useAuthStore();
   const [errorMessage, setErrorMessage] = useState("");
@@ -37,8 +40,8 @@ const Login: React.FC = () => {
       setErrorMessage(""); // Clear previous error
       await login(data?.email, data?.password);
       toast.success("Successfully Login!");
-
-      navigate("/dashboard");
+      await fetchBlogs();
+      navigate("/");
     } catch (error) {
       if (error instanceof Error) {
         toast.error(error.message);

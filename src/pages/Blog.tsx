@@ -5,21 +5,32 @@ import Error from "../components/common/Error";
 import Card from "../components/common/Card";
 import Button from "../components/common/Button";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import useAuthStore from "../stores/authStore";
 
 const Blog = () => {
   const { blogs, fetchBlogs, loading, error } = useBlogStore();
+  const { isLoggedIn } = useAuthStore();
 
   useEffect(() => {
     fetchBlogs();
-    console.log(blogs);
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>All Blog - BlogCMS</title>
+        <meta
+          name="description"
+          content="This is the blog list page of My Website. All list of the blog"
+        />
+      </Helmet>
       <div className="flex justify-between  items-center">
         <h1 className="mb-6 text-2xl font-bold">Blogs</h1>
-        <Link to="/blog/addblog">
-        <Button  name="Create+" />
-        </Link>
+        {isLoggedIn && (
+          <Link to="/blog/addblog">
+            <Button name="Create+" />
+          </Link>
+        )}
       </div>
 
       <div className="rounded-lg border bg-white p-6 shadow-sm">
