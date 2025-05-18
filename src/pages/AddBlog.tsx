@@ -96,17 +96,17 @@ const AddBlog: React.FC = () => {
         <Link to="/blog">
           <Button name="<-Back" />
         </Link>
-        <h1 className="mb-6 text-2xl font-bold">Create-Blogs</h1>
+        <h1 className="mb-6 text-2xl  font-bold">Create-Blogs</h1>
       </div>
 
-      <div className="rounded-lg border bg-white p-6 shadow-sm">
+      <div className="rounded-lg  p-6 shadow-sm">
         <p>Create your Blogs !</p>
       </div>
 
       {loading && <Loading />}
       {error && <Error error={error} />}
       <form
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 w-full max-w-lg mt-4 "
+        className=" shadow-md rounded px-8 pt-6 pb-8 w-full max-w-lg mt-4 "
         onSubmit={handleSubmit(onSubmit)}
         noValidate
       >
@@ -117,7 +117,7 @@ const AddBlog: React.FC = () => {
         )}
 
         <div className="mb-4">
-          <label className="block text-slate-700 text-sm mb-2" htmlFor="title">
+          <label className="block  text-sm mb-2" htmlFor="title">
             Title
           </label>
           <input
@@ -135,7 +135,7 @@ const AddBlog: React.FC = () => {
 
         <div className="mb-4">
           <label
-            className="block text-slate-700 text-sm mb-2"
+            className="block  text-sm mb-2"
             htmlFor="description"
           >
             Description
@@ -156,7 +156,7 @@ const AddBlog: React.FC = () => {
         </div>
         <div className="mb-4">
           <label
-            className="block text-slate-700 text-sm mb-2"
+            className="block  text-sm mb-2"
             htmlFor="category"
           >
             Category
@@ -183,7 +183,7 @@ const AddBlog: React.FC = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-slate-700 text-sm mb-2" htmlFor="author">
+          <label className="block  text-sm mb-2" htmlFor="author">
             Author
           </label>
           <select
@@ -205,7 +205,7 @@ const AddBlog: React.FC = () => {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-slate-700 text-sm mb-2" htmlFor="tags">
+          <label className="block  text-sm mb-2" htmlFor="tags">
             Tags (comma separated)
           </label>
           <input
@@ -229,7 +229,7 @@ const AddBlog: React.FC = () => {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-slate-700 text-sm mb-2" htmlFor="status">
+          <label className="block  text-sm mb-2" htmlFor="status">
             Status
           </label>
           <select
@@ -249,7 +249,7 @@ const AddBlog: React.FC = () => {
         </div>
         <div className="mb-4">
           <label
-            className="block text-slate-700 text-sm mb-2"
+            className="block  text-sm mb-2"
             htmlFor="coverImg"
           >
             Cover Image URL

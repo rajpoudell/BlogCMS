@@ -1,12 +1,13 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import useBlogStore from "../stores/blogStore";
 import Loading from "../components/common/Loading";
-import Error from "../components/common/Error";
-import Card from "../components/common/Card";
-import Button from "../components/common/Button";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import useAuthStore from "../stores/authStore";
+
+const Error = React.lazy(() => import("../components/common/Error"));
+const Card = React.lazy(() => import("../components/common/Card"));
+const Button = React.lazy(() => import("../components/common/Button"));
 
 const Blog = () => {
   const { blogs, fetchBlogs, loading, error } = useBlogStore();

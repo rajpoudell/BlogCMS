@@ -32,6 +32,7 @@ interface Blog {
 interface BlogState {
   blogs: Blog[];
   currentBlog: Blog | null;
+  allBlogs: Blog[];
 
   tags: Tag[];
   categories: Category[];
@@ -48,6 +49,7 @@ interface BlogState {
   updateBlog: (id: string, updatedBlog: Partial<Blog>) => Promise<void>;
   deleteBlog: (id: string) => Promise<void>;
   searchBlogs: (keyword: string) => void;
+  setBlogs: (data: Blog[]) => void;
   resetSearch: () => void;
   draftBlogs: () => Promise<void>;
 }
@@ -55,6 +57,9 @@ interface BlogState {
 const useBlogStore = create<BlogState>((set, get) => ({
   blogs: [],
   tags: [],
+  allBlogs: [],
+
+  setBlogs: (data) => set({ blogs: data, allBlogs: data }),
   categories: [],
   currentBlog: null,
   authors: [],
@@ -124,7 +129,7 @@ const useBlogStore = create<BlogState>((set, get) => ({
 
   addBlog: async (newBlog) => {
     set({ loading: true, error: null });
-    const { user,isLoggedIn } = useAuthStore.getState();
+    const { user, isLoggedIn } = useAuthStore.getState();
 
     try {
       if (!user || !isLoggedIn) {
@@ -168,13 +173,13 @@ const useBlogStore = create<BlogState>((set, get) => ({
     }
   },
   searchBlogs: (keyword) => {
-    const filteredBlogs = get().blogs.filter((blog) =>
-      blog.title.toLowerCase().includes(keyword.toLowerCase())
+    const filteredBlogs = get().allBlogs.filter((blog) =>
+      blog.title.toLowerCase().includes(keyword.toLowerCase()) || blog.tags.some((tag) => tag.toLowerCase().includes(keyword.toLowerCase()))  
     );
     set({ blogs: filteredBlogs });
   },
   resetSearch: () => {
-    set({ blogs: get().blogs });
+    set({ blogs: get().allBlogs });
   },
   draftBlogs: async () => {
     set({ loading: true, error: null });

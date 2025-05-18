@@ -36,7 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       ${isOpen ? "left-0" : "-left-64"}`}
     >
       <div className="flex h-full flex-col shadow-2xl">
-        <div className="flex h-18 justify-between items-center   px-4 border-b">
+        <div className="flex h-18 justify-between  items-center   px-4 border-b">
           <Link to={"/"}>
             <h1
               className="text-xl font-bold text-shadow-lg/20   "
@@ -46,7 +46,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
             </h1>
           </Link>
 
-          <FaAngleLeft  className="h-4 w-4" onClick={toggleSidebar} />
+          <FaAngleLeft  className="h-4 w-4 lg:hidden" onClick={toggleSidebar} />
         </div>
 
         <nav className="flex-1 overflow-y-auto p-4">
@@ -60,8 +60,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
                     `flex items-center rounded-lg px-4 py-3 transition-colors
                     ${
                       isActive
-                        ? "bg-blue-50 text-slate-900"
-                        : "dark:bg-slate-800 dark:text-gray-400 text-slate-900 dark:hover:bg-slate-900 "
+                        ? "bg-blue-50 text-slate-900 dark:bg-slate-900 dark:text-blue-50 "
+                        : "dark:bg-slate-700 dark:text-gray-100 text-slate-900 dark:hover:bg-slate-800 "
                     }`
                   }
                 >

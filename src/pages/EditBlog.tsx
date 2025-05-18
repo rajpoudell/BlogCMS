@@ -118,14 +118,14 @@ useEffect(() => {
         <h1 className="mb-6 text-2xl font-bold">Edit-Blogs</h1>
       </div>
 
-      <div className="rounded-lg border bg-white p-6 shadow-sm">
+      <div className="rounded-lg   p-6 shadow-sm">
         <p>Edit your Blogs !</p>
       </div>
 
       {loading && <Loading />}
       {error && <Error error={error} />}
       <form
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 w-full max-w-lg mt-4 "
+        className=" shadow-md rounded px-8 pt-6 pb-8 w-full max-w-lg mt-4 "
         onSubmit={handleSubmit(onSubmit)}
         noValidate
       >
@@ -136,7 +136,7 @@ useEffect(() => {
         )}
 
         <div className="mb-4">
-          <label className="block text-slate-700 text-sm mb-2" htmlFor="title">
+          <label className="block  text-sm mb-2" htmlFor="title">
             Title
           </label>
           <input
@@ -154,7 +154,7 @@ useEffect(() => {
 
         <div className="mb-4">
           <label
-            className="block text-slate-700 text-sm mb-2"
+            className="block  text-sm mb-2"
             htmlFor="description"
           >
             Description
@@ -175,7 +175,7 @@ useEffect(() => {
         </div>
         <div className="mb-4">
           <label
-            className="block text-slate-700 text-sm mb-2"
+            className="block  text-sm mb-2"
             htmlFor="category"
           >
             Category
@@ -202,7 +202,7 @@ useEffect(() => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-slate-700 text-sm mb-2" htmlFor="author">
+          <label className="block  text-sm mb-2" htmlFor="author">
             Author
           </label>
           <select
@@ -224,7 +224,7 @@ useEffect(() => {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-slate-700 text-sm mb-2" htmlFor="tags">
+          <label className="block  text-sm mb-2" htmlFor="tags">
             Tags (comma separated)
           </label>
           <input
@@ -248,7 +248,7 @@ useEffect(() => {
           )}
         </div>
         <div className="mb-4">
-          <label className="block text-slate-700 text-sm mb-2" htmlFor="status">
+          <label className="block  text-sm mb-2" htmlFor="status">
             Status
           </label>
           <select
@@ -268,7 +268,7 @@ useEffect(() => {
         </div>
         <div className="mb-4">
           <label
-            className="block text-slate-700 text-sm mb-2"
+            className="block  text-sm mb-2"
             htmlFor="coverImg"
           >
             Cover Image URL
@@ -296,7 +296,7 @@ useEffect(() => {
             </p>
           )}
         </div>
-        <Button name="submit" />
+        <Button name="Update" />
       </form>
     </div>
   );

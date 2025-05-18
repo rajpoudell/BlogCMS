@@ -54,10 +54,10 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center ">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 w-full max-w-sm"
+        className=" shadow-md rounded px-8 pt-6 pb-8 w-full max-w-sm"
         noValidate
       >
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
@@ -67,7 +67,7 @@ const Login: React.FC = () => {
           </p>
         )}
         <div className="mb-4">
-          <label className="block text-slate-700 text-sm mb-2">Email</label>
+          <label className="block  text-sm mb-2">Email</label>
           <input
             type="email"
             {...register("email")}
@@ -81,7 +81,7 @@ const Login: React.FC = () => {
         </div>
 
         <div className="mb-6">
-          <label className="block text-slate-700 text-sm mb-2">Password</label>
+          <label className="block  text-sm mb-2">Password</label>
           <input
             type="password"
             {...register("password")}

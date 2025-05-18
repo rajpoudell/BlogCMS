@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useBlogStore from "../stores/blogStore";
 import Button from "../components/common/Button";
-import toast from "react-hot-toast";
 import useAuthStore from "../stores/authStore";
+import useBlogStore from "../stores/blogStore";
+import toast from "react-hot-toast";
 
 const BlogDetails = () => {
   const { id } = useParams<{ id: any }>();
@@ -46,9 +46,9 @@ const BlogDetails = () => {
         </>
       )}
 
-      <div className="p-6 bg-white rounded shadow mt-2 ">
+      <div className="p-6  rounded shadow mt-2 ">
         <div className="flex flex-col gap-4">
-          <span className="text-sm tracking-wider font-medium text-slate-900">
+          <span className="text-sm tracking-wider font-medium ">
             Category:{currentBlog?.category}{" "}
           </span>
 
@@ -70,9 +70,8 @@ const BlogDetails = () => {
           <p>{currentBlog?.description}</p>
         </div>
 
-        {/* Render more*/}
       </div>
-      <span className="text-sm tracking-wider font-medium text-slate-900">
+      <span className="text-sm tracking-wider font-medium opacity-50 cursor-pointer">
         Tags:{" "}
         {currentBlog?.tags?.length
           ? "#" + currentBlog.tags.join("#")

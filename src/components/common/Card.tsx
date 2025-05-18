@@ -20,14 +20,14 @@ const Card: React.FC<CardProps> = ({ data }) => {
     <div  className= "max-w-sm bg-white dark:bg-slate-800 dark:border-slate-700 border-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 border ">
       <div className="p-5 space-y-3">
         <div className="flex justify-between items-center">
-          <span className="text-sm text-white bg-slate-600 px-3 py-1 rounded-full font-medium">
+          <span className="text-sm dark:text-slate-900 dark:bg-slate-400 text-white bg-slate-600 px-3 py-1 rounded-full font-medium">
             {data.category}
           </span>
           <span className="text-xs text-gray-400">{new Date(data.createdDate).toDateString()}</span>
          
         </div>
         <Link to={`/blog/${data.id}`}>
-        <h2 className=" text-slate-800 text-xl cursor-pointer font-semibold  hover:text-slate-600 transition duration-300">
+        <h2 className=" text-slate-800 dark:text-white dark:bg-slate-800 text-xl cursor-pointer font-semibold  hover:text-slate-600 transition duration-300">
           {data.title.length > 2 ? `${data.title.slice(0, 20)}...` : data.title}
         </h2>
         </Link>
