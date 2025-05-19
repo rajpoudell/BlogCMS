@@ -27,26 +27,26 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       path: "/settings",
       icon: <FiSettings className="h-5 w-5" />,
     },
-    { name: "Search", path: "/Search", icon: <FiSearch className="h-5 w-5" /> },
+    { name: "Search", path: "/search", icon: <FiSearch className="h-5 w-5" /> },
   ];
 
   return (
     <aside
-      className={` dark:text-white dark:bg-slate-700  text-slate-900 bg-white fixed top-0 z-20 h-screen w-64  shadow-lg transition-all duration-300 lg:left-0 
+      className={`  dark:bg-gray-900  text-slate-900 bg-white fixed top-0 z-20 h-screen w-64  shadow-lg transition-all duration-300 lg:left-0 
       ${isOpen ? "left-0" : "-left-64"}`}
     >
-      <div className="flex h-full flex-col shadow-2xl">
+      <div className="flex h-full flex-col ">
         <div className="flex h-18 justify-between  items-center   px-4 border-b">
           <Link to={"/"}>
             <h1
-              className="text-xl font-bold text-shadow-lg/20   "
+              className="text-xl dark:text-slate-300 font-bold text-shadow-lg/20   "
               onClick={toggleSidebar}
             >
               MyApp
             </h1>
           </Link>
 
-          <FaAngleLeft  className="h-4 w-4 lg:hidden" onClick={toggleSidebar} />
+          <FaAngleLeft  className="h-4 w-4 lg:hidden dark:text-slate-300" onClick={toggleSidebar} />
         </div>
 
         <nav className="flex-1 overflow-y-auto p-4">
@@ -61,7 +61,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
                     ${
                       isActive
                         ? "bg-blue-50 text-slate-900 dark:bg-slate-900 dark:text-blue-50 "
-                        : "dark:bg-slate-700 dark:text-gray-100 text-slate-900 dark:hover:bg-slate-800 "
+                        : "dark:bg-slate-800 dark:text-gray-100 text-slate-900 dark:hover:bg-slate-800 "
                     }`
                   }
                 >

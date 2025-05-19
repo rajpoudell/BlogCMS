@@ -26,14 +26,14 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={() => setIsDark(() => !isDark)}
-      className="px-2 flex gap-1 py-2 bg-slate-300 dark:bg-slate-700 text-black dark:text-white rounded"
+      className="px-2 flex gap-1 py-2  text-black dark:text-white rounded  cursor-pointer"
     >
       {isDark ? (
-        <MdOutlineLightbulb className="h-6 w-6" />
+        <MdOutlineLightbulb className="h-6 w-6 " />
       ) : (
-        <FaLightbulb className="h-6 w-6" />
+        <FaLightbulb className="h-6 w-6"  />
       )}{" "}
-      Mode
+      
     </button>
   );
 };

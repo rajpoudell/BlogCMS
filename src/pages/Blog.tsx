@@ -17,7 +17,7 @@ const Blog = () => {
     fetchBlogs();
   }, []);
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>All Blog - BlogCMS</title>
         <meta
@@ -25,7 +25,7 @@ const Blog = () => {
           content="This is the blog list page of My Website. All list of the blog"
         />
       </Helmet>
-      <div className="flex justify-between  items-center">
+      <div className="flex justify-between  items-center ">
         <h1 className="mb-6 text-2xl font-bold">Blogs</h1>
         {isLoggedIn && (
           <Link to="/blog/addblog">

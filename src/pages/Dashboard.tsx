@@ -12,10 +12,10 @@ const Dashboard = () => {
           content="This is the dashboard of My BlogCMS. Discover amazing features and Blogs."
         />
       </Helmet>
-      <h1 className="mb-6 text-2xl font-bold  ">Dashboard</h1>
-      <div className=" rounded-lg border  p-6 shadow-sm">
+      <h1 className="mb-6 text-2xl font-bold   ">Dashboard</h1>
+      <div className=" rounded-lg   p-6 shadow-sm">
         <p>Welcome to your dashboard!</p>
-        <div className="p-4 flex flex-wrap justify-between gap-4  shadow rounded-lg">
+        <div className="p-4 flex flex-wrap justify-between gap-4   rounded-lg">
           <div className="flex items-center gap-3 p-4 rounded flex-1 min-w-[250px]">
             <div>
               <p className="text-sm ">Total Blogs:</p>

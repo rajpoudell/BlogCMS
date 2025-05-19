@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       <Header toggleSidebar={toggleSidebar} />
       
-      <main className="pt-16 lg:pl-64 dark:text-white dark:bg-slate-700 text-slate-900 bg-white">
+      <main className="pt-16 lg:pl-64 dark:text-white dark:bg-slate-800 text-slate-900 bg-white">
         <div className="p-6 ">
           {children}
         </div>

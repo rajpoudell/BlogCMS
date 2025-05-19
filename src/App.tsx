@@ -33,6 +33,8 @@ function App() {
               <Route path="/search" element={<Search />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
+              <Route path="/search/:name?" element={<Search />} />
+
               <Route
                 path="/blog/edit/:id"
                 element={

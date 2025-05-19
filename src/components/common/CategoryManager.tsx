@@ -80,20 +80,20 @@ const CategoryManager: React.FC = () => {
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-100">
+        <thead className="">
           <tr>
-            <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+            <th className="px-4 py-2 text-left text-sm font-medium ">
               Category Name
             </th>
-            <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+            <th className="px-4 py-2 text-left text-sm font-medium ">
               Actions
             </th>
           </tr>
         </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
+        <tbody className="bg-white dark:bg-slate-900 divide-y divide-gray-200">
           {categories.map((cat) => (
             <tr key={cat.id}>
-              <td className="px-4 py-2 text-sm text-gray-800">{cat.name}</td>
+              <td className="px-4 py-2 text-sm ">{cat.name}</td>
               <td className="px-4 py-2 space-x-2">
                 <div className="flex gap-2 ">
                   <Button name="Edit" clickout={() => handleEdit(cat)} />

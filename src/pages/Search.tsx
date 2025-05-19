@@ -1,6 +1,6 @@
 import React, { useState, useEffect, type ChangeEvent } from "react";
 import useBlogStore from "../stores/blogStore";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 interface Blog {
   id?: string;
   title: string;
@@ -16,6 +16,7 @@ interface Blog {
 const Search: React.FC = () => {
   const { blogs, setBlogs, searchBlogs, resetSearch } = useBlogStore();
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const { name } = useParams();
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -24,10 +25,17 @@ const Search: React.FC = () => {
       );
       const data: Blog[] = await res.json();
       setBlogs(data);
+      if (name) {
+        setSearchTerm(name);
+        searchBlogs(name);
+      } else {
+        resetSearch();
+        setSearchTerm("");
+      }
     };
 
     fetchBlogs();
-  }, [setBlogs]);
+  }, [setBlogs, name]);
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -47,12 +55,14 @@ const Search: React.FC = () => {
         className="w-full p-4 border border-gray-300 rounded-md"
         value={searchTerm}
         onChange={handleSearch}
-        placeholder="Search by title..."
+        placeholder="Search by title or tag..."
       />
       <ul>
         {blogs.map((blog) => (
           <Link to={`/blog/${blog.id}`} key={blog.id}>
-            <li className="p-2 shadow m-2 rounded">{blog.id}.{blog.title}</li>
+            <li className="p-2 shadow m-2 rounded">
+              {blog.id}.{blog.title}
+            </li>
           </Link>
         ))}
       </ul>
