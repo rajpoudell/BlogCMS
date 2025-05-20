@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   const { logout } = useAuthStore();
   const { isLoggedIn } = useAuthStore();
   return (
-    <header className="dark:text-white dark:bg-slate-900 text-slate-900 bg-white fixed left-0 right-0 top-0 z-10 flex  h-18 items-center lg:justify-end justify-between shadow-xl/15 rounded bg-white px-4 lg:left-64">
+    <header className=" dark:bg-slate-900 text-slate-900 bg-white fixed left-0 right-0 top-0 z-10 flex  h-18 items-center lg:justify-end justify-between shadow-xl/15 rounded  px-4 lg:left-64">
       <button
         onClick={toggleSidebar}
         className="rounded p-2 dark:hover:bg-slate-600 hover:bg-slate-200 lg:hidden"

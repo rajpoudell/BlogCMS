@@ -38,7 +38,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
           {data.tags.map((tag, index) => (
             <span
               key={index}
-              className=" text-slate-600 dark:text-gray-100  dark:bg-slate-600 bg-gray-100  text-xs px-2 py-1 rounded-full cursor-pointer"
+              className="  dark:text-gray-100  dark:bg-slate-600 bg-gray-100  text-xs px-2 py-1 rounded-full cursor-pointer"
             >
               <Link to={`/search/${encodeURIComponent(tag)}`} key={tag}>
                 #{tag}

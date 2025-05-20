@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
 
   return (
     <aside
-      className={`  dark:bg-gray-900  text-slate-900 bg-white fixed top-0 z-20 h-screen w-64  shadow-lg transition-all duration-300 lg:left-0 
+      className={`  dark:bg-slate-900  text-slate-900 bg-white fixed top-0 z-20 h-screen w-64  shadow-lg transition-all duration-300 lg:left-0 
       ${isOpen ? "left-0" : "-left-64"}`}
     >
       <div className="flex h-full flex-col ">
@@ -65,7 +65,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
                     }`
                   }
                 >
-                  <span className="mr-3">{item.icon}</span>
+                  <span className="mr-3 dark:text-blue-600">{item.icon}</span>
                   <span>{item.name}</span>
                 </NavLink>
               </li>
